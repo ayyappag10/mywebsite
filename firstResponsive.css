@@ -1,0 +1,257 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0px;
+    min-width: 550px;
+    background-color: #EAEDED;
+}
+
+#clickMe{
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    left: 20px;
+    width: 100px;
+    margin: 10px 0;
+    line-height: 90px;
+    height: 100px;
+    color: white;
+    background-color: crimson;
+    border-radius: 50%;
+}
+#motiveQuote{
+    display: block;
+        position: absolute;
+        font-size: 40px;
+        width: 300px;
+        left: 10px;
+        top: 120px;
+        color: crimson;
+}
+.navBar{
+    background-color: #333333;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+    opacity: 0.9  ;
+}
+
+.navBarReverse{
+    clear: both;
+    display: flex;
+    flex-direction: column;    
+    margin: "15px";
+    top: 50px;
+}
+
+.navButton{
+ padding: 15px 25px 15px 25px;
+ border: 1px solid #646d7c;
+ margin: 10px;
+ background-color: #383e4c; 
+ color: white;
+ text-decoration: none;
+}
+.navButton:hover{
+    background-color: #49505f; 
+}
+
+.iconBar{
+    height: 2px;
+    width: 20px;
+    margin-top: 4px;
+    background-color: white;
+    float: right;
+    clear: right;
+}
+.navBarToggle{
+    background-color: #333333;
+    padding: 9px 10px 9px 10px;
+    margin: 8px 15px 8px 0px;
+    float: right;
+    position: sticky;
+    top: 0;
+}
+
+p{
+    clear: both;
+}
+.bgCoverSection{
+    position: relative;
+    height: 614px;
+    width: 100%;
+    padding: 0px;
+    background-color: aqua;
+    text-align: center;
+}
+.carouselImage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.carouselArrow{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: black;
+    font-size: 20px;
+    background-color:white;
+    
+}
+#carouselLeftArrow{
+    bottom: 50%;
+    left: 10px;
+}
+#carouselRightArrow{
+    bottom: 50%;
+    right:10px;
+}
+
+.imageCarouselRadioButton{
+    width: 20px;
+    height: 20px;
+}
+#carouselbuttonCntainer{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    
+}
+#carouselbuttonInnerCntainer{
+    position: relative;
+    left: -50%;
+}
+
+/* .sectionBgImg{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+} */
+.animImg{
+    position: fixed;
+   width: 200px;
+   height: 200px;
+   object-fit:cover;
+   margin: 0;
+   right: 0;
+   animation-name: handAnim;
+   animation-duration: 2s;
+   animation-iteration-count: infinite; 
+   animation-timing-function: linear;
+   border-radius: 100px;
+}
+
+.animImg:hover{
+    animation-duration: 0ms;
+}
+
+@keyframes handAnim{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(-360deg);
+    }
+}
+
+.row{
+    display:flex;
+    /* padding:40px 150px; */
+    flex-direction: row;
+    flex-basis: 1fr 1fr 1fr;
+    height: 100%;
+}
+.gridBox{
+    /* padding:40px 150px; */
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.column{
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+    margin: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #dfe1e5;
+    border-radius: 26px;
+    /* overflow: hidden; */
+}
+.column img{
+    width:100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 26px 26px 0px 0px;
+    transition: transform .4s;
+    /* transition-property: background-color; */
+    /* max-height:200px; */
+    /* width: auto; */
+    /* height: auto;
+    object-fit: contain; */
+    /* overflow: hidden; */
+}
+.column img:hover{
+    /* transform: scale(1.5); */
+    /* transform: translate3d(20px,10px, 10px) */
+    /* transform: rotateZ(90deg); */
+    /* transform: skewY(-45deg) */
+    /* transform:  scale(1.4) ; */
+}
+
+p{
+    text-align: left;
+    margin: 0 10px;
+}
+.column a{
+    display: inline-block;
+    margin: 10px;
+    background-color: lightgreen;
+    color: black;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.mainSection::before {
+    content:"";
+    display:block;
+    height:70px; /* fixed header height*/
+    margin:-70px 0 0; /* negative fixed header height */
+  }   
+.mainSection{
+    padding: 0 20px;
+}
+@media screen and (max-width: 740px)
+{
+.navBarNone{
+    display: none;
+}
+.gridBox{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.row{
+    display: flex;
+    flex-direction: column;
+}
+
+#sectionBgImg{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+}
+
+@media screen and (min-width: 741px)
+{
+.navBarRow{
+        display: flex;
+        flex-direction: row;
+}
+.navBarToggle{
+    display: none;
+}
+
+}
+
