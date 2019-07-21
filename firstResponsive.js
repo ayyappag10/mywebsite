@@ -1,5 +1,6 @@
 var nvBrTgl = document.getElementsByClassName('navBarToggle')
 var navBar = document.getElementById('navBarId');
+
 nvBrTgl.item(0).onclick = function myFunction() {
     
     // alert(navBar.classList,navBar.style.display);
@@ -36,7 +37,24 @@ nvBrTgl.item(0).onmouseleave = function(){
 
 var carouselButtonList = document.getElementsByClassName("imageCarouselRadioButton");
 var carouselImage= document.getElementById("carouselImage1");
+var isMouseDown;
+carouselImage.onmousedown = function(){
 
+   isMouseDown = true;
+   console.log(isMouseDown)
+}
+carouselImage.onmouseup = function(){
+  isMouseDown = false;
+  console.log(isMouseDown)
+}
+
+setInterval(carouselAnimation, 2000)
+function carouselAnimation(){
+  carouselImage.mou
+  if(!isMouseDown){
+  rightClickHandler();
+  }
+}
 carouselButtonList[0].onclick = f1;
 carouselButtonList[1].onclick = f2;
   carouselButtonList[2].onclick = f3;
@@ -57,7 +75,8 @@ carouselButtonList[1].onclick = f2;
 
   var rightCarouselArrow = document.getElementById("carouselRightArrow");
   var leftCarouselArrow = document.getElementById("carouselLeftArrow");
-  rightCarouselArrow.onclick = function(){
+  rightCarouselArrow.onclick =  rightClickHandler;
+  function rightClickHandler(){
     if(carouselButtonList[0].checked)
     {
       f2();
