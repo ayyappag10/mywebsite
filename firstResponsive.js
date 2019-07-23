@@ -25,21 +25,26 @@ nvBrTgl.item(0).onclick = function myFunction() {
     //   navBar.style.display === "none"
     // }
   }
-  nvBrTgl.item(0).onmouseenter = function(){
-    navBar.classList.remove("navBarNone")
-  navBar.classList.add("navBarReverse")
-} 
 
-nvBrTgl.item(0).onmouseleave = function(){
-  navBar.classList.add("navBarNone")
-  navBar.classList.remove("navBarReverse")
-}
+  window.onscroll = function () {  
+    navBar.classList.add("navBarNone")
+      navBar.classList.remove("navBarReverse")
+    // called when the window is scrolled.  
+    } 
+//   nvBrTgl.item(0).onmouseenter = function(){
+//     navBar.classList.remove("navBarNone")
+//   navBar.classList.add("navBarReverse")
+// } 
+
+// nvBrTgl.item(0).onmouseleave = function(){
+//   navBar.classList.add("navBarNone")
+//   navBar.classList.remove("navBarReverse")
+// }
 
 var carouselButtonList = document.getElementsByClassName("imageCarouselRadioButton");
 var carouselImage= document.getElementById("carouselImage1");
 var isMouseDown;
 carouselImage.onmousedown = function(){
-
    isMouseDown = true;
    console.log(isMouseDown)
 }
@@ -50,11 +55,21 @@ carouselImage.onmouseup = function(){
 
 setInterval(carouselAnimation, 2000)
 function carouselAnimation(){
-  carouselImage.mou
-  if(!isMouseDown){
+  if(!isMouseDown && isInViewport(carouselImage)){
   rightClickHandler();
   }
 }
+
+var isInViewport = function (elem) {
+	var distance = elem.getBoundingClientRect();
+	return (
+		distance.top >= 0 &&
+		distance.left >= 0 &&
+		distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+};
+
 carouselButtonList[0].onclick = f1;
 carouselButtonList[1].onclick = f2;
   carouselButtonList[2].onclick = f3;
@@ -111,7 +126,21 @@ function showRandomDog(){
 
   return new Promise(function(resolve,reject){
 
-    fetch(RANDOM_IMAGE_URL)
+    fetch(RANDOM_IMAGE_URL,
+    //   {
+    //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    //     mode: 'cors', // no-cors, cors, *same-origin
+    //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    //     credentials: 'same-origin', // include, *same-origin, omit
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         // 'Content-Type': 'application/x-www-form-urlencoded',
+    //     },
+    //     redirect: 'follow', // manual, *follow, error
+    //     referrer: 'no-referrer', // no-referrer, *client
+    //     body: JSON.stringify(data), // body data type must match "Content-Type" header
+    // } 
+    )
       .then(function(res) {
         return res.json();
       })
@@ -142,7 +171,6 @@ function showRandomDog(){
 document
   .querySelector("#clickMe")
   .addEventListener("click", function() {
-    showRandomDog();
     fetch("/complement")
       .then(function(res) {
         return res.json();

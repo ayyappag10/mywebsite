@@ -5,6 +5,10 @@ body{
     background-color: #EAEDED;
 }
 
+#aboutUsSection{
+    padding: 0 20px;
+}
+
 #clickMe{
     display: block;
     position: absolute;
@@ -22,16 +26,15 @@ body{
     display: block;
         position: absolute;
         font-size: 40px;
-        width: 300px;
+        width: 400px;
         left: 10px;
         top: 120px;
         color: crimson;
 }
+
 .navBar{
     background-color: #333333;
     justify-content: center;
-    position: sticky;
-    top: 0px;
     opacity: 0.9  ;
 }
 
@@ -67,25 +70,30 @@ body{
     background-color: #333333;
     padding: 9px 10px 9px 10px;
     margin: 8px 15px 8px 0px;
-    float: right;
-    position: sticky;
+    /* float: right; */
     top: 0;
 }
 
-p{
-    clear: both;
+#navBarContainer{
+    width: 100%;
+    position: sticky;
+    z-index: 100;
+    top:0;
+    left: 0;
 }
 .bgCoverSection{
     position: relative;
+    left: 0px;
+    top: 0px;
     height: 614px;
     width: 100%;
     padding: 0px;
-    background-color: aqua;
+    background-color:#EAEDED;
     text-align: center;
 }
 .carouselImage{
-    width: 100%;
     height: 100%;
+    width: auto;
     object-fit: contain;
 }
 .carouselArrow{
@@ -105,6 +113,10 @@ p{
 #carouselRightArrow{
     bottom: 50%;
     right:10px;
+}
+
+button{
+    outline: 0;
 }
 
 .imageCarouselRadioButton{
@@ -127,7 +139,7 @@ p{
     height: 600px;
     object-fit: cover;
 } */
-.animImg{
+/* .animImg{
     position: fixed;
    width: 200px;
    height: 200px;
@@ -139,9 +151,9 @@ p{
    animation-iteration-count: infinite; 
    animation-timing-function: linear;
    border-radius: 100px;
-}
+} */
 
-.animImg:hover{
+/* .animImg:hover{
     animation-duration: 0ms;
 }
 
@@ -152,7 +164,7 @@ p{
     to{
         transform: rotateZ(-360deg);
     }
-}
+} */
 
 .row{
     display:flex;
@@ -213,19 +225,32 @@ p{
     border-radius: 4px;
 }
 
-.mainSection::before {
+#contactSection{
+    height: 700px;
+    background-color: white;
+    margin: 0 40px;
+    border-radius: 15px;
+    line-height: 30px;
+}
+
+/* .mainSection::before {
     content:"";
     display:block;
-    height:70px; /* fixed header height*/
-    margin:-70px 0 0; /* negative fixed header height */
-  }   
-.mainSection{
+    height:70px; 
+    margin:-70px 0 0;
+  } 
+   */
+
+/* .mainSection{
     padding: 0 20px;
-}
+} */
 @media screen and (max-width: 740px)
 {
 .navBarNone{
     display: none;
+}
+.navBarToggle{
+    display: block;
 }
 .gridBox{
     grid-template-columns: repeat(2, 1fr);

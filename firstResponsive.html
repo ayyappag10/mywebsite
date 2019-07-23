@@ -8,26 +8,27 @@
 </header>
 
 <body>
-  <button class="navBarToggle" id="navTogId">
-    <span class="iconBar"></span>
-    <span class="iconBar"></span>
-    <span class="iconBar"></span>
-  </button>
-  <nav class="navBar navBarRow navBarNone" id="navBarId">
-    
-    <a href="#homePageSection" class="navButton">Home Page</a>
-    <a href="#aboutUsSection" class="navButton">About Us</a>
-    <a href="#servicesSection" class="navButton">Services</a>
-    <a href="#contactSection/" class="navButton">Contact</a>
-    <a href="https://www.google.com/" class="navButton">External</a>
-  </nav>
-  <img class="animImg" id = "homeImg" src="point.jpg">
-  <div class="bgCoverSection" id="homePageSection">
+  <div id="navBarContainer">
+      <button class="navBarToggle" id="navTogId">
+          <span class="iconBar"></span>
+          <span class="iconBar"></span>
+          <span class="iconBar"></span>
+        </button>
+        <nav class="navBar navBarRow navBarNone" id="navBarId">
+          
+          <a href="#homePageSection" class="navButton">Home Page</a>
+          <a href="#aboutUsSection" class="navButton">Where to start</a>
+          <a href="#servicesSection" class="navButton">what to do later</a>
+          <a href="#contactSection" class="navButton">Contact Me</a>
+        </nav>
+  </div>
+
+  <div class="bgCoverSection mainSection" id="homePageSection">
       <button id="clickMe">Quote</button>
     <p id="motiveQuote">hi i am ayyappa</p>
     <img class ="carouselImage" id="carouselImage1" src="./public/bg-11.jpg">
-    <button id="carouselLeftArrow" class="carouselArrow">L</button>
-    <button id="carouselRightArrow" class="carouselArrow">R</button>
+    <button id="carouselLeftArrow" class="carouselArrow">&lt</button>
+    <button id="carouselRightArrow" class="carouselArrow">&gt</button>
     <div id="carouselbuttonCntainer">
       <div id="carouselbuttonInnerCntainer">
       <input type="radio" class="imageCarouselRadioButton" name="imageCarouselRadioButton" checked="checked">
@@ -177,10 +178,13 @@
     </div>
   </div>
   <div class ="mainSection" id="contactSection">
-    <p>4</p>
-  </div>
-  <div class ="mainSection" id="externalSection">
-    <p>5</p>
+    <h1>Contnact Info</h1>
+    <p>Ayyapp gollu <br>
+      Phone No: 9916431747<br>
+      Email: golluayyappa@gmail.com<br>
+      GitHub: <a href="https://github.com/ayyappag10"> https://github.com/ayyappag10</a><br>
+      Behance: <a href="https://www.behance.net/golluayyapa">https://www.behance.net/golluayyapa</a> 
+    </p>
   </div>
 
 </body>
